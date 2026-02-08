@@ -1,0 +1,13 @@
+[workspace]
+resolver = "2"
+members = ["bootlet-switch-lib","firmware", "run-bootlet-switch", "types"]
+
+[profile.release]
+debug = 2
+lto = true
+opt-level = 'z'
+
+[profile.dev]
+debug = 2
+lto = true
+opt-level = "z"

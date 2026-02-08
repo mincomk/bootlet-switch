@@ -1,0 +1,20 @@
+busybox:
+  type: auto_download
+linux_kernel:
+  type: auto_download
+systemd_boot_binary:
+  type: auto_download
+rootfs_size_mb: 512
+extra_kernel_cmdline: quiet nomodeset
+extra_init_script: |
+  export BOOTIT_CONFIG_PATH=/boot/bootit.yaml
+
+  echo "Bootlet switch script running..."
+  run-bootlet-switch
+extra_bin_files:
+  - file: bin/run-bootlet-switch
+    target: /bin/run-bootlet-switch
+  - file: bin/bootit
+    target: /bin/bootit
+  - file: bin/it
+    target: /bin/it
