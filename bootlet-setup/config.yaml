@@ -10,7 +10,7 @@ extra_init_script: |
   export BOOTIT_CONFIG_PATH=/boot/bootit.yaml
 
   echo "Bootlet switch script running..."
-  run-bootlet-switch
+  run-bootlet-switch --wait
 extra_bin_files:
   - file: bin/run-bootlet-switch
     target: /bin/run-bootlet-switch
